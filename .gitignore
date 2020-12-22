@@ -1,0 +1,15 @@
+.idea
+target
+bin
+powp-rhymers.iml
+*.log
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.exe
+*.class
