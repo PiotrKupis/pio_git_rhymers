@@ -8,7 +8,7 @@ public class RhymersJUnitTest {
     @Test
     public void testCountIn() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
-        int testValue = 4;
+        final int testValue = 4;
         rhymer.countIn(testValue);
 
         int result = rhymer.peekaboo();
