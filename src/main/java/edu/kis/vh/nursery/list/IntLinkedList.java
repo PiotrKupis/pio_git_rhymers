@@ -1,10 +1,13 @@
 package edu.kis.vh.nursery.list;
 
+
 public class IntLinkedList {
 
 	private Node last;
 	private int i;
 	private static final int MINUSONE = -1;
+
+	public IntLinkedList(){}
 
 	public void push(int i) {
 		if (getLast() == null)

@@ -1,5 +1,6 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ public class RhymersJUnitTest {
         final int testValue = 4;
         rhymer.countIn(testValue);
 
-        int result = rhymer.peekaboo();
+        final int result = rhymer.peekaboo();
         Assert.assertEquals(testValue, result);
     }
 
@@ -75,4 +76,41 @@ public class RhymersJUnitTest {
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
     }
 
+    @Test
+    public void testHanoiCountIn() {
+        DefaultCountingOutRhymer hanoiRhymer = new HanoiRhymer();
+
+        hanoiRhymer.countIn(10);
+        Assert.assertEquals(0, hanoiRhymer.getTotal());
+        Assert.assertEquals(false, hanoiRhymer.isFull());
+    }
+
+    @Test
+    public void testFIFOCountOut() {
+        DefaultCountingOutRhymer fifoRhymer = new FIFORhymer();
+
+        Assert.assertEquals(-1, fifoRhymer.countOut());
+
+        fifoRhymer.countIn(10);
+        Assert.assertEquals(10, fifoRhymer.countOut());
+    }
+
+    @Test
+    public void testInitLinkedList() {
+
+        IntLinkedList intLinkedList = new IntLinkedList();
+
+        Assert.assertEquals(true, intLinkedList.isEmpty());
+
+        for (int i = 0; i < 10; ++i)
+            intLinkedList.push(i);
+
+        Assert.assertEquals(false, intLinkedList.isEmpty());
+
+        for (int i = 9; i >= 0; --i)
+            Assert.assertEquals(i, intLinkedList.pop());
+
+        Assert.assertEquals(false, intLinkedList.isFull());
+        Assert.assertEquals(true, intLinkedList.isEmpty());
+    }
 }
