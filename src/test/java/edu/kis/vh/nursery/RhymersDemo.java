@@ -12,6 +12,7 @@ class RhymersDemo {
         testRhymers(factory);
     }
 
+    //TODO needs refactoring 
     private static void testRhymers(Rhymersfactory factory) {
         DefaultCountingOutRhymer[] rhymers = {factory.getStandardRhymer(), factory.getFalseRhymer(),
                 factory.getFIFORhymer(), factory.getHanoiRhymer()};
